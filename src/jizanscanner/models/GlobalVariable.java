@@ -20,7 +20,7 @@ public class GlobalVariable {
 
    
     public static int passfail = 0;
-//    public static SearchEanPanel Searchobj = null;
+//  public static SearchEanPanel Searchobj = null;
 //    public static SearchEanPanelNormal SearchNormalobj = null;
     public static String username = "";
     public static String password = "";
@@ -33,11 +33,17 @@ public class GlobalVariable {
     public static String dialogname ="";
     public static  Map<String, String> myMap = new HashMap<String, String>();
     
+    public String curgrn = "";
+
+    public String getCurgrn() {
+        return curgrn;
+    }
+
+    public void setCurgrn(String curgrn) {
+        this.curgrn = curgrn;
+    }
     
    
-    
-    
-
     public  String getUsertype() {
         return usertype;
     }
@@ -46,8 +52,6 @@ public class GlobalVariable {
         this.usertype = usertype;
     }
     
-  
-
     public static Map<String, String> getMyMap() {
         return myMap;
     }
@@ -139,7 +143,7 @@ public class GlobalVariable {
        frm.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/eancode/scanimg.png"))); 
     }
      
-   public String getDialogname() {
+    public String getDialogname() {
         return this.dialogname;
     }
 
@@ -147,9 +151,5 @@ public class GlobalVariable {
         this.dialogname = dialogname;
         
     }
-   
-    
-   
-    
-     
+  
 }
