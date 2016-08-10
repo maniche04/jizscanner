@@ -518,12 +518,9 @@ public class ScannerGrnSetupController implements Initializable {
          
     }
 
-    /*
-     */
+    
     @FXML
     public void delAct() throws Exception {
-        
-        
         
         if(grnviewtbl.getItems().size() < 1)
         {
@@ -535,8 +532,7 @@ public class ScannerGrnSetupController implements Initializable {
                 alertinfo.showAndWait();
         }
         else
-        {
-          
+        {      
             try   
             {
             GrnDetails gd = allGrnRow.get(grnviewtbl.getSelectionModel().getSelectedIndex());
@@ -622,6 +618,10 @@ public void syncbtn()
     t.start();
  }
 
+/*
+
+
+*/
 
     public void printmsg(String msg)
         {
