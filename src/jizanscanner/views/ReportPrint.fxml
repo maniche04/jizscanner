@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="childanchor" prefHeight="456.0" prefWidth="514.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jizanscanner.controllers.ReportPrintController">
+    <stylesheets>
+        <URL value="@/jizanscanner/style/reportprint.css" />
+    </stylesheets>
+   <children>
+      <TextArea fx:id="commenttxt" layoutX="268.0" layoutY="82.0" prefHeight="170.0" prefWidth="215.0" promptText="Comment" />
+      <Button fx:id="printbtn" layoutX="331.0" layoutY="26.0" mnemonicParsing="false" onAction="#printReport" prefHeight="31.0" prefWidth="153.0" text="Print Preview" />
+      <Button fx:id="savebtn" layoutX="336.0" layoutY="399.0" mnemonicParsing="false" onAction="#saveComment" prefHeight="31.0" prefWidth="153.0" text="Save" />
+      <Label layoutX="14.0" layoutY="88.0" prefHeight="21.0" prefWidth="90.0" text="Seal No." />
+      <TextField fx:id="sealTX" layoutX="112.0" layoutY="86.0" prefHeight="31.0" prefWidth="144.0" />
+      <Label layoutX="14.0" layoutY="141.0" prefHeight="21.0" prefWidth="83.0" text="Ship Mode" />
+      <TextField fx:id="shiptxt" layoutX="112.0" layoutY="138.0" prefHeight="31.0" prefWidth="144.0" />
+      <Label layoutX="11.0" layoutY="198.0" prefHeight="21.0" prefWidth="90.0" text="Count Size" />
+      <TextField fx:id="counttxt" layoutX="112.0" layoutY="193.0" prefHeight="31.0" prefWidth="144.0" />
+      <Label layoutX="11.0" layoutY="252.0" prefHeight="21.0" prefWidth="83.0" text="Skid" />
+      <TextField fx:id="skidtxt" layoutX="112.0" layoutY="247.0" prefHeight="31.0" prefWidth="144.0" />
+      <Label layoutX="13.0" layoutY="304.0" prefHeight="21.0" prefWidth="80.0" text="PR Number" />
+      <TextField fx:id="prtxt" layoutX="112.0" layoutY="299.0" prefHeight="31.0" prefWidth="144.0" />
+      <Label layoutX="14.0" layoutY="355.0" prefHeight="21.0" prefWidth="90.0" text="Weight" />
+      <TextField fx:id="wghtxt" layoutX="112.0" layoutY="350.0" prefHeight="31.0" prefWidth="144.0" />
+      <Label layoutX="17.0" layoutY="21.0" prefHeight="31.0" prefWidth="257.0" text="Update info &amp; print report">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="13.0" layoutY="404.0" prefHeight="21.0" prefWidth="90.0" text="CTN" />
+      <TextField fx:id="ctntxt" layoutX="112.0" layoutY="397.0" prefHeight="31.0" prefWidth="144.0" />
+      <AnchorPane fx:id="saveMsg" layoutX="276.0" layoutY="334.0" prefHeight="39.0" prefWidth="215.0" />
+      <TextField fx:id="txtcheckby" layoutX="268.0" layoutY="299.0" prefHeight="31.0" prefWidth="215.0" promptText="Check By" />
+   </children>
+</AnchorPane>

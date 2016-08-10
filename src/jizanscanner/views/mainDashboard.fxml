@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jizanscanner.controllers.ScannerGrnSetupController">
+    <stylesheets>
+        <URL value="@/jizanscanner/style/scannergrnsetup.css"/>
+    </stylesheets>
+       <children>
+      <BorderPane prefHeight="714.0" prefWidth="999.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <SplitPane dividerPositions="0.25" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="672.0" prefWidth="237.0" scaleShape="false" SplitPane.resizableWithParent="false">
+                     <children>
+                        <VBox prefHeight="693.0" prefWidth="306.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox prefHeight="34.0" prefWidth="306.0">
+                                 <children>
+                                    <DatePicker fx:id="checkInDatePicker" onAction="#refreshGrnList" onKeyPressed="#onEnter" prefHeight="31.0" prefWidth="140.0" />
+                                    <TextField fx:id="filterGRN" onAction="#refreshGrnList" onKeyReleased="#refreshGrnList" prefHeight="31.0" prefWidth="144.0" promptText="Enter Filter Text" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <TableView fx:id="tbldata" onMouseClicked="#grnClicked" prefHeight="604.0" prefWidth="150.0" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS" />
+                              <ToolBar prefHeight="0.0" prefWidth="306.0" VBox.vgrow="NEVER">
+                                <items>
+                                  <Button fx:id="addbtn" mnemonicParsing="false" onAction="#addNewGrn" text="+Add" />
+                                    <Button fx:id="viewtbn" mnemonicParsing="false" text="View" />
+                                </items>
+                              </ToolBar>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="653.0" prefWidth="666.0">
+                     <children>
+                        <VBox prefHeight="653.0" prefWidth="683.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ToolBar prefHeight="34.0" prefWidth="744.0">
+                                 <items>
+                                    <Button mnemonicParsing="false" text="&lt;" />
+                                    <TextField fx:id="mattxt" onKeyReleased="#searchMat" prefHeight="34.0" prefWidth="187.0" promptText="Material">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </TextField>
+                                    <TextField fx:id="destxt" onKeyReleased="#searchDes" prefHeight="31.0" prefWidth="361.0" promptText="Description" />
+                                 </items></ToolBar>
+                              <TableView fx:id="grnviewtbl" editable="true" onKeyTyped="#addKeyTab" prefHeight="474.0" prefWidth="683.0" tableMenuButtonVisible="true" />
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <TextField fx:id="scammattxt" layoutX="4.0" layoutY="44.0" onKeyReleased="#matEntered" prefHeight="31.0" prefWidth="237.0" promptText="Scan Material" />
+                                    <TextField layoutX="2.0" layoutY="150.0" prefHeight="31.0" prefWidth="264.0" />
+                                    <TextField layoutX="267.0" layoutY="150.0" prefHeight="31.0" prefWidth="131.0" />
+                                    <TextField layoutX="399.0" layoutY="150.0" prefHeight="31.0" prefWidth="55.0" />
+                                    <TextField layoutX="455.0" layoutY="150.0" prefHeight="31.0" prefWidth="87.0" />
+                                    <TextField layoutX="543.0" layoutY="150.0" prefHeight="31.0" prefWidth="73.0" />
+                                    <ImageView fitHeight="174.0" fitWidth="118.0" layoutX="622.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Button layoutX="506.0" layoutY="97.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="108.0" text="Add" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                     </children></AnchorPane>
+              </items>
+            </SplitPane>
+         </center>
+         <bottom>
+            <AnchorPane prefHeight="19.0" prefWidth="999.0" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

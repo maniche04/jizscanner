@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="jizanscanner.controllers.PictureViewController">
+    <stylesheets>
+        <URL value="@/jizanscanner/style/pictureview.css" />
+    </stylesheets>
+   <children>
+      <ImageView fx:id="imgview" fitHeight="393.0" fitWidth="600.0" layoutX="-2.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

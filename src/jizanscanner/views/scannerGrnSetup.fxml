@@ -61,7 +61,7 @@
                                     </TextField>
                                     <TextField fx:id="destxt" onKeyReleased="#searchDes" prefHeight="31.0" prefWidth="361.0" promptText="Description" />
                                  </items></ToolBar>
-                              <TableView fx:id="grnviewtbl" editable="true" onKeyTyped="#addKeyTab" prefHeight="474.0" prefWidth="683.0" tableMenuButtonVisible="true" />
+                              <TableView fx:id="grnviewtbl" editable="true" prefHeight="474.0" prefWidth="683.0" tableMenuButtonVisible="true" />
                               <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                  <children>
                                     <TextField layoutX="21.0" layoutY="21.0" />

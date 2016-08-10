@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3b5ff0c7-18c2-4ae4-ba6d-87014845f6d0">
+	<property name="ireport.zoom" value="2.8531167061100544"/>
+	<property name="ireport.x" value="1660"/>
+	<property name="ireport.y" value="277"/>
+	<parameter name="comptitle" class="java.lang.String"/>
+	<parameter name="prnuum" class="java.lang.String"/>
+	<parameter name="isrval" class="java.lang.String"/>
+	<parameter name="sealnum" class="java.lang.String"/>
+	<parameter name="shipmodel" class="java.lang.String"/>
+	<parameter name="countsizenum" class="java.lang.String"/>
+	<parameter name="skidnum" class="java.lang.String"/>
+	<parameter name="wgtnum" class="java.lang.String"/>
+	<parameter name="grnnum" class="java.lang.String"/>
+	<parameter name="grndate" class="java.lang.String"/>
+	<parameter name="grnrecivdate" class="java.lang.String"/>
+	<parameter name="grdtotal" class="java.lang.String"/>
+	<parameter name="dmgtot" class="java.lang.String"/>
+	<parameter name="impnote" class="java.lang.String"/>
+	<parameter name="impnotevar" class="java.lang.String"/>
+	<field name="srno" class="java.lang.String"/>
+	<field name="desc" class="java.lang.String"/>
+	<field name="good" class="java.lang.String"/>
+	<field name="dmgbox" class="java.lang.String"/>
+	<field name="dmgleak" class="java.lang.String"/>
+	<field name="dmgbrkn" class="java.lang.String"/>
+	<field name="totat" class="java.lang.String"/>
+	<field name="orig" class="java.lang.String"/>
+	<field name="lotnum" class="java.lang.String"/>
+	<field name="wgt" class="java.lang.String"/>
+	<field name="remarks" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="72" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="-3" width="802" height="27" uuid="dc53059a-2c9b-4a52-84eb-405a731b11dc"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" size="17" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{comptitle}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="23" width="801" height="15" uuid="bcd38e4b-54f3-42e2-b9a9-dd908fbbc320"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Warehouse Department]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="44" width="798" height="15" uuid="8b51222b-d695-4dba-a3bd-7f090d5f0fba"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GOODS RECEIPT NOTE - IMPORT]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-20" y="63" width="843" height="1" uuid="0d2775f7-dc5b-444e-a9b4-390c07efd4ee"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<textField pattern="EEE, d MMM yyyy HH:mm:ss Z">
+				<reportElement x="619" y="3" width="181" height="20" uuid="a6d9951a-e209-4cf9-8f71-b18eff288741"/>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="75" splitType="Stretch">
+			<rectangle>
+				<reportElement x="301" y="2" width="196" height="67" uuid="0b7d0070-a582-4ccc-93f9-7c4faca26bbc"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="305" y="6" width="188" height="60" uuid="02fb0636-9040-4856-8440-417ecac4e566"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="305" y="10" width="189" height="14" uuid="80e117eb-8fed-47be-9ab8-f182ab7b6e85"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GOODS RECEIPT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="359" y="25" width="80" height="18" uuid="e816c054-bf44-438f-abd6-06e4636e9c98"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="46" width="184" height="20" uuid="0d682959-e7d9-4de2-b030-4f34075b2604"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[*IMPORT*]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="507" y="2" width="295" height="68" uuid="877a2575-7251-4da4-bad4-b11d225fd9ad"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="2" width="289" height="68" uuid="4deb1ba2-2732-4173-8c86-3a740aed38dc"/>
+			</rectangle>
+			<line>
+				<reportElement x="650" y="2" width="1" height="68" uuid="e0f5b4aa-bd16-4f81-9570-41d9e42facc1"/>
+			</line>
+			<line>
+				<reportElement x="507" y="24" width="295" height="1" uuid="60b26a79-136d-49da-9dd9-1eb70ecf2fe0"/>
+			</line>
+			<line>
+				<reportElement x="507" y="47" width="295" height="1" uuid="689dbab2-f5eb-4831-92b7-df43ede01933"/>
+			</line>
+			<line>
+				<reportElement x="0" y="24" width="289" height="1" uuid="8f6458c4-0d8c-48b4-83fa-7598d4214a4e"/>
+			</line>
+			<line>
+				<reportElement x="0" y="47" width="289" height="1" uuid="504a6b0c-8443-4d2f-a144-73b7b0e29fa5"/>
+			</line>
+			<line>
+				<reportElement x="100" y="2" width="1" height="68" uuid="68e1b1d0-aca9-4d30-84f9-8145e9c575b5"/>
+			</line>
+			<line>
+				<reportElement x="197" y="2" width="1" height="46" uuid="50fed0fe-6d95-4cff-a714-946a4271ef50"/>
+			</line>
+			<staticText>
+				<reportElement x="4" y="5" width="31" height="16" uuid="ed2bef85-f64f-4311-b152-eece449ab19c"/>
+				<textElement>
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ISR # :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="104" y="5" width="58" height="16" uuid="c862a6da-cb55-4e93-bbc1-da43b5645e9e"/>
+				<textElement>
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ship Mode :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="201" y="5" width="36" height="16" uuid="5b49d485-e79d-43a8-bb1c-d504463939ca"/>
+				<textElement>
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Skids :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="28" width="31" height="16" uuid="900971f0-bdf9-4a9b-841a-d7c2a431790e"/>
+				<textElement>
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PR # :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="51" width="92" height="16" uuid="c4492950-2208-4e1e-8775-0bad8a048b16"/>
+				<textElement>
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Seal # :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="104" y="28" width="57" height="16" uuid="3991b26b-3b6c-4c07-b043-420e89854963"/>
+				<textElement>
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Count Size :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="201" y="28" width="36" height="16" uuid="3867f074-083a-4b9a-94f4-c6fd73c4d0bb"/>
+				<textElement>
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Wgt :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="513" y="6" width="80" height="18" uuid="2c022108-ee91-4cb4-a310-b739b5025bb3"/>
+				<textElement>
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GRN Number :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="513" y="28" width="64" height="16" uuid="c1fae2fa-a42d-49f3-99d5-8bfeb5061ebc"/>
+				<textElement>
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GRN Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="513" y="52" width="85" height="18" uuid="a0ee6197-456d-4862-8d6f-6b32a0e61b52"/>
+				<textElement>
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Received Date :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="43" y="5" width="53" height="16" uuid="567defd4-47a2-4dcb-af2b-36a7e0e55310"/>
+				<textElement textAlignment="Right">
+					<font fontName="Segoe UI"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{isrval}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="42" y="28" width="54" height="16" uuid="8d7341d4-d5d2-40b2-8c1c-0feff407643a"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{prnuum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="104" y="52" width="181" height="16" uuid="f68bcdde-8825-49e9-ada2-3a133723f189"/>
+				<textFieldExpression><![CDATA[$P{sealnum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="164" y="5" width="31" height="16" uuid="76f8dd2b-940c-43c0-80b2-cd05061dd360"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{shipmodel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="164" y="28" width="31" height="16" uuid="f448b13a-2f92-468a-aad6-a833c99e3287"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{countsizenum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="5" width="50" height="16" uuid="acc84902-2ab1-4a73-8a7e-16e82deef993"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{skidnum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="28" width="50" height="16" uuid="c3e34b7c-a8d8-4dc6-959c-3337f2f58a4e"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{wgtnum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="657" y="6" width="132" height="20" uuid="aad5d5d0-e8dd-4e7c-b477-77403678f1f8"/>
+				<textFieldExpression><![CDATA[$P{grnnum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="657" y="28" width="131" height="17" uuid="45f523b6-da29-44ac-9c74-77b1217cdc09"/>
+				<textFieldExpression><![CDATA[$P{grndate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="657" y="52" width="130" height="17" uuid="75cd552f-6077-48fe-93ef-2b4a267684fd"/>
+				<textFieldExpression><![CDATA[$P{grnrecivdate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="43" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="6" width="802" height="36" uuid="0d31e9e4-7e0b-4fb9-bb9e-b060fe000237"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="2" y="24" width="21" height="16" uuid="1c8866d8-a40b-44ef-82fb-9447e740b5a5"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[S.N.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="31" y="24" width="279" height="16" uuid="2b2d2c93-172e-48e3-b381-e112e849de0a"/>
+				<textElement textAlignment="Left">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="394" y="24" width="54" height="16" uuid="f2216157-c865-4ec1-aa52-2911b17f562a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Good]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="452" y="24" width="43" height="16" uuid="304221eb-c22a-479e-a9c1-fdad0869176e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Box]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="499" y="24" width="38" height="16" uuid="d3ad6bda-05b2-4563-8253-5634e84486ae"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Leak]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="539" y="24" width="42" height="16" uuid="6671d749-645c-47c9-8b52-da597469b761"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Brkn]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="584" y="24" width="59" height="16" uuid="6b430efa-11dc-4ed5-aba1-da331ca12d1a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="647" y="24" width="36" height="16" uuid="aa498113-f5c6-4964-af2c-f0c13a73ff96"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Orig.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="685" y="24" width="56" height="16" uuid="8d4adf38-76d7-47bf-a5f0-0e84e87369ed"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lot]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="743" y="24" width="58" height="16" uuid="be860675-d390-4486-9df9-b0ee8052c8ed"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Weight]]></text>
+			</staticText>
+			<line>
+				<reportElement x="25" y="23" width="1" height="19" uuid="02e83bfd-ff68-487c-b96e-73aef366cec3"/>
+			</line>
+			<line>
+				<reportElement x="391" y="22" width="1" height="20" uuid="797017ff-7efd-4a51-8897-a421e41ff9e0"/>
+			</line>
+			<line>
+				<reportElement x="449" y="23" width="1" height="19" uuid="bc718d76-3893-4e84-9ace-d301c6890d8c"/>
+			</line>
+			<line>
+				<reportElement x="497" y="23" width="1" height="19" uuid="99f69dd3-4f70-4fec-b323-14aba3f5b535"/>
+			</line>
+			<line>
+				<reportElement x="538" y="23" width="1" height="19" uuid="a498e682-8f1a-472d-bb0b-1c3112266fb3"/>
+			</line>
+			<line>
+				<reportElement x="582" y="23" width="1" height="19" uuid="563c5ad3-53bd-44a0-9c70-00342373eade"/>
+			</line>
+			<line>
+				<reportElement x="645" y="21" width="1" height="21" uuid="de297b10-89a5-4518-9ad4-2b5a28ef66d1"/>
+			</line>
+			<line>
+				<reportElement x="683" y="23" width="1" height="19" uuid="404d2c37-5b01-4634-a233-d077a009af9e"/>
+			</line>
+			<line>
+				<reportElement x="742" y="23" width="1" height="19" uuid="dc55f4b2-89c3-4077-b822-e978da9d3f89"/>
+			</line>
+			<line>
+				<reportElement x="0" y="22" width="802" height="1" uuid="9e9ebdd8-d00d-4d80-b9df-a60f22ea77c2"/>
+			</line>
+			<line>
+				<reportElement x="391" y="6" width="1" height="22" uuid="1f13fb66-6301-4016-8b6b-288c2dffff29"/>
+			</line>
+			<staticText>
+				<reportElement x="4" y="7" width="386" height="14" uuid="01822bd8-2a17-4b41-8cba-cc76a5b7063e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Product Details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="479" y="7" width="141" height="14" uuid="f3066273-2151-4ee4-868c-7d1b8a3e7a3a"/>
+				<textElement>
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantity (PCS)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="645" y="6" width="1" height="21" uuid="bac6fc68-b984-4eb4-8d23-747880f02220"/>
+			</line>
+			<staticText>
+				<reportElement x="648" y="7" width="150" height="14" uuid="a1ae2627-16ba-4bf0-85ea-66a2fc4a198e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Add. Information]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="24" width="78" height="16" uuid="b634803f-5036-41a6-b306-e272921a0cae"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Remarks]]></text>
+			</staticText>
+			<line>
+				<reportElement x="311" y="23" width="1" height="19" uuid="dad4b91f-ce12-4bfe-a422-3dc1cc4d7cd8"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<textField>
+				<reportElement x="2" y="3" width="21" height="14" uuid="f91f3c23-2900-4a45-8b9c-d77f9c9a9a6a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{srno}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="26" y="3" width="284" height="14" uuid="0c04ad14-924b-48a0-b659-f8cd27182990"/>
+				<textElement textAlignment="Left">
+					<font fontName="Segoe UI" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{desc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="394" y="3" width="54" height="14" uuid="440e2cab-b55b-470d-aef0-75e4570376e7"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{good}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="451" y="3" width="43" height="14" uuid="84c26930-85ec-44dc-b516-ed0d7d038467"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dmgbox}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="496" y="3" width="40" height="14" uuid="e5850716-c054-416e-ac48-ea00ca4cabf4"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dmgleak}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="539" y="3" width="42" height="14" uuid="6e3a68a1-6179-47dc-b4e1-e87b07cd6d17"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dmgbrkn}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="584" y="3" width="59" height="14" uuid="90cef6b0-50aa-4423-aa07-0f0236c00894"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totat}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="645" y="3" width="37" height="14" uuid="3a5cbbd5-16ef-442b-957f-27fe2da42338"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{orig}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="685" y="3" width="56" height="14" uuid="04d4f592-27b1-4fdf-a996-a3aa3abf08a0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lotnum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="743" y="3" width="58" height="14" uuid="0a66a737-11ee-4680-8b35-d97613e61beb"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{wgt}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="312" y="3" width="78" height="14" uuid="52b814a9-fe56-46be-9c63-a023c8891cd3"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{remarks}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="65" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="600" y="2" width="30" height="16" uuid="c78f1d51-aa6c-4bd0-a635-6f1f4516ad0b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="632" y="2" width="16" height="16" uuid="54bce425-001e-465e-9bb7-285c7a1e11ea"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[of]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement x="652" y="2" width="30" height="16" uuid="f9f7a424-286f-41f8-9992-c55a89556c35"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="105">
+			<rectangle>
+				<reportElement x="0" y="26" width="802" height="79" uuid="c26a5711-6683-4c65-898a-0a96b6f326cf"/>
+			</rectangle>
+			<line>
+				<reportElement x="0" y="73" width="258" height="1" uuid="ceb69513-41f0-4c03-82ad-201f93468062"/>
+			</line>
+			<line>
+				<reportElement x="258" y="26" width="1" height="79" uuid="f0b48956-9b9e-45fa-b989-cf25de971355"/>
+			</line>
+			<line>
+				<reportElement x="434" y="26" width="1" height="79" uuid="c598a16e-d663-475b-ab56-b1140ee78d3b"/>
+			</line>
+			<staticText>
+				<reportElement x="69" y="26" width="150" height="14" uuid="5cfc8150-86dc-4a5e-a7a6-9ad03604ea9b"/>
+				<textElement>
+					<font fontName="Segoe UI" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(CHECKING SUPERVISED BY)]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="3" y="42" width="131" height="27" uuid="ceb0b059-b211-4e8a-be94-109dde4e9173"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="137" y="42" width="118" height="27" uuid="8f87a429-1068-4440-bae7-6a4ea566fcd6"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="4" y="76" width="250" height="28" uuid="a9195d63-e033-4fe2-977d-f3d7ca79c100"/>
+				<textElement>
+					<font fontName="Segoe UI" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PLS. CHECK EXPIRY DATE OF COSMETIC ITEMS BEFORE ENTERING!]]></text>
+			</staticText>
+			<line>
+				<reportElement x="259" y="59" width="176" height="1" uuid="b1327eb6-c780-45e4-91c5-1840bab8f9ff"/>
+			</line>
+			<line>
+				<reportElement x="257" y="73" width="177" height="1" uuid="a44d88b1-5e22-4a7b-81a5-394a92ecc386"/>
+			</line>
+			<line>
+				<reportElement x="348" y="60" width="1" height="45" uuid="0871866c-c485-4bfd-bf7d-0db217eb5639"/>
+			</line>
+			<staticText>
+				<reportElement x="275" y="59" width="73" height="14" uuid="ecd456d7-c619-44a8-833e-a51e30a7a5a3"/>
+				<textElement>
+					<font fontName="Segoe UI" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PRINTED BY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="361" y="59" width="65" height="14" uuid="9572c962-7c1e-4c68-872b-c209f747e1d5"/>
+				<textElement>
+					<font fontName="Segoe UI" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VERIFIED BY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="259" y="33" width="175" height="14" uuid="2b8a0451-4625-40d4-9874-8f59e1a2aff6"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(COUNTING SUPERVISED BY)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="519" y="26" width="1" height="33" uuid="90c5e5ad-9e9c-46b5-a6e9-d8ccdac7c7ac"/>
+			</line>
+			<line>
+				<reportElement x="434" y="59" width="165" height="1" uuid="ffb7a8fb-1429-48cc-af95-1c17132acf27"/>
+			</line>
+			<staticText>
+				<reportElement x="438" y="29" width="80" height="28" uuid="ec502eef-25cd-4ddc-8cda-fb893ff5bd8b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(ITEM WEIGHED BY)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="523" y="29" width="70" height="28" uuid="0f5b4cd0-0764-4731-b279-d769c172d9ef"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(QUALITY CHECKED BY)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="599" y="59" width="203" height="1" uuid="c5b9a09f-ae15-41e0-bba7-c7a4d977e7ea"/>
+			</line>
+			<staticText>
+				<reportElement x="603" y="63" width="198" height="40" uuid="5286abe2-100c-4117-8bad-8d8422548eea"/>
+				<textElement>
+					<font fontName="Segoe UI" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[* FORWARD AND SPECIAL INFORMATION TO THE MANAGING DIRECTOR IMMEDIATELY]]></text>
+			</staticText>
+			<line>
+				<reportElement x="712" y="4" width="1" height="22" uuid="22f94d04-51f9-4080-86e2-3944b57e48fa"/>
+			</line>
+			<staticText>
+				<reportElement x="603" y="33" width="108" height="20" uuid="c3184e43-b3ba-4dcf-8d13-4bf0244a424d"/>
+				<textElement>
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GRAND TOTAL PIECES:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="712" y="26" width="1" height="34" uuid="526fe918-b1b3-45d0-ad74-4635141c0982"/>
+			</line>
+			<staticText>
+				<reportElement x="603" y="8" width="89" height="20" uuid="78ef3cbc-d356-4085-9f4d-b485f89f0487"/>
+				<textElement>
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL DAMAGES:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="720" y="33" width="72" height="20" uuid="8b2aa1f8-140e-4919-a2e0-6d905aa05069"/>
+				<textElement textAlignment="Right">
+					<font fontName="Segoe UI" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{grdtotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="719" y="8" width="73" height="19" uuid="0c3c8f32-f23e-4270-9871-d621162d3645"/>
+				<textElement textAlignment="Right">
+					<font fontName="Segoe UI" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dmgtot}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="487" y="78" width="48" height="18" uuid="0e46022d-2bd3-4963-9d9e-9a32360f2601"/>
+				<textElement>
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[YOUSEF]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="598" y="4" width="204" height="101" uuid="5b5fa67c-67cb-4c02-acdc-9db5fead8709"/>
+			</rectangle>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band height="36">
+			<textField>
+				<reportElement x="31" y="5" width="78" height="14" uuid="a9b62109-74ba-4f10-89d6-0fa702d2861a"/>
+				<textFieldExpression><![CDATA[$P{impnote}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="117" y="5" width="625" height="14" uuid="f4eaa128-9a0a-4bdc-b2ce-013449b29528"/>
+				<textElement>
+					<font fontName="Segoe UI" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{impnotevar}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

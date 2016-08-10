@@ -25,7 +25,7 @@ public Connection conn() throws ClassNotFoundException
    try{
         String dbURL = "jdbc:sqlserver://10.1.100.200\\SQLEXPRESS:1433;databaseName=intranet";
         
-        //String dbURL = "jdbc:sqlserver://10.1.100.200\\SQLEXPRESS:1433;databaseName=tst_jizan_epromise";
+        //String dbURL = "jdbc:sqlserver://10.1.100.200\\SQLEXPRESS:1433;databaseName=jizan_epromis";
         String user = "manish";
         String pass = "Almunia24";
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver"); 

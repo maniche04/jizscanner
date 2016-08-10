@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import org.controlsfx.control.*?>
 <?import org.controlsfx.glyphfont.*?>
 <?import javafx.scene.effect.*?>
@@ -16,17 +17,15 @@
         <URL value="@/jizanscanner/style/login.css" />
     </stylesheets>
    <children>
-      <TextField fx:id="loginuser" layoutX="68.0" layoutY="151.0" />
-      <Text layoutX="68.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
-      <Text layoutX="68.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
-      <PasswordField fx:id="loginpass" layoutX="68.0" layoutY="230.0" onAction="#tryLogin" />
-      <Button fx:id="loginbtn" layoutX="129.0" layoutY="292.0" mnemonicParsing="false" onAction="#tryLogin" text="Login" />
-      <Text layoutX="63.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jizan Scanner">
-         <font>
-            <Font size="32.0" />
-         </font>
-      </Text>
-      <AnchorPane fx:id="loginerrors" layoutX="69.0" layoutY="346.0" prefHeight="74.0" prefWidth="207.0" />
+      <TextField fx:id="loginuser" layoutX="68.0" layoutY="206.0" />
+      <Text layoutX="68.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+      <Text layoutX="68.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+      <PasswordField fx:id="loginpass" layoutX="68.0" layoutY="297.0" onAction="#tryLogin" />
+      <Button fx:id="loginbtn" layoutX="132.0" layoutY="354.0" mnemonicParsing="false" onAction="#tryLogin" text="Login" />
+      <AnchorPane fx:id="loginerrors" layoutX="81.0" layoutY="409.0" prefHeight="52.0" prefWidth="207.0" />
+      <ImageView fx:id="jizanbanner" fitHeight="173.0" fitWidth="187.0" layoutX="73.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="canlogo" fitHeight="44.0" fitWidth="43.0" layoutX="17.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="303.0" layoutY="2.0" onMouseClicked="#closeLogin" prefHeight="21.0" prefWidth="15.0" text="X" />
    </children>
    <effect>
       <Glow />

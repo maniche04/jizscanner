@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.embed.swing.*?>
+<?import org.controlsfx.control.textfield.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jizanscanner.controllers.ScannerGrnSetupController">
+    <stylesheets>
+        <URL value="@/jizanscanner/style/scannergrnsetup.css" />
+    </stylesheets>
+   <children>
+      <BorderPane prefHeight="800.0" prefWidth="1481.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-201.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <SplitPane fx:id="showSplit" dividerPositions="0.22" prefHeight="647.0" prefWidth="1402.0" BorderPane.alignment="CENTER">
+              <items>
+                <AnchorPane fx:id="showbox" minHeight="0.0" minWidth="0.0" prefHeight="672.0" prefWidth="237.0" scaleShape="false" SplitPane.resizableWithParent="false">
+                     <children>
+                        <VBox fx:id="leftVbox" prefHeight="693.0" prefWidth="306.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox prefHeight="34.0" prefWidth="306.0">
+                                 <children>
+                                    <DatePicker fx:id="checkInDatePicker" onAction="#refreshGrnList" onKeyPressed="#onEnter" prefHeight="31.0" prefWidth="140.0" styleClass="textfieldnox" />
+                                    <TextField fx:id="filterGRN" onAction="#refreshGrnList" onKeyReleased="#refreshGrnList" prefHeight="31.0" prefWidth="168.0" promptText="Enter Filter Text" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <TableView fx:id="tbldata" onMouseClicked="#grnClicked" prefHeight="604.0" prefWidth="150.0" VBox.vgrow="ALWAYS" />
+                              <ToolBar prefHeight="0.0" prefWidth="306.0" VBox.vgrow="NEVER">
+                                <items>
+                                  <Button fx:id="addbtn" mnemonicParsing="false" onAction="#addNewGrn" prefHeight="31.0" prefWidth="68.0" text="Add" />
+                                    <Button fx:id="viewtbn" mnemonicParsing="false" onAction="#editNew" prefHeight="31.0" prefWidth="76.0" text="Edit" />
+                                </items>
+                              </ToolBar>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="645.0" prefWidth="1047.0">
+                     <children>
+                        <VBox fx:id="rightVbox" prefHeight="645.0" prefWidth="942.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="208.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ToolBar prefHeight="50.0" prefWidth="1222.0">
+                                 <items>
+                                    <Button fx:id="showhide" mnemonicParsing="false" onAction="#showHideAct" />
+                                    <TextField fx:id="mattxt" onKeyReleased="#searchMat" prefHeight="34.0" prefWidth="214.0" promptText="Material">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </TextField>
+                                    <TextField fx:id="destxt" onKeyReleased="#searchDes" prefHeight="33.0" prefWidth="372.0" promptText="Description" />
+                                    <CheckBox fx:id="isSearchAll" contentDisplay="CENTER" mnemonicParsing="false" onAction="#globalSearch" prefHeight="21.0" prefWidth="66.0" text="All" textAlignment="CENTER" />
+                                    <Button fx:id="repbtn" mnemonicParsing="false" onAction="#getReport" prefHeight="36.0" prefWidth="99.0" text="Report" />
+                                    <Button fx:id="del" mnemonicParsing="false" onAction="#delAct" prefHeight="35.0" prefWidth="90.0" text="Delete" />
+                                    <Label fx:id="thisGrnNum" textAlignment="RIGHT">
+                                       <padding>
+                                          <Insets left="50.0" />
+                                       </padding>
+                                       <font>
+                                          <Font name="System Bold" size="19.0" />
+                                       </font>
+                                    </Label>
+                                 </items></ToolBar>
+                              <TableView fx:id="grnviewtbl" editable="true" maxHeight="1.7976931348623157E308" prefHeight="349.0" prefWidth="1002.0" styleClass="textfieldnox" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS" />
+                              <AnchorPane fx:id="scanAnchor" prefHeight="247.0" prefWidth="744.0">
+                                 <children>
+                                    <TextField fx:id="scammattxt" layoutX="53.0" layoutY="37.0" onKeyReleased="#matEntered" prefHeight="31.0" prefWidth="297.0" promptText="Scan Material" />
+                                    <TextField fx:id="desctxt" layoutX="51.0" layoutY="169.0" prefHeight="31.0" prefWidth="780.0" promptText="Description" styleClass="textfieldnox" />
+                                    <TextField fx:id="codetxt" layoutX="51.0" layoutY="130.0" prefHeight="31.0" prefWidth="261.0" promptText="Canias code" styleClass="textfieldnox" />
+                                    <TextField fx:id="qtytxt" alignment="CENTER" layoutX="318.0" layoutY="130.0" onAction="#addNewITem" prefHeight="31.0" prefWidth="73.0" promptText="Qty" styleClass="textfieldnox" />
+                                    <TextField fx:id="contrytxt" alignment="CENTER" layoutX="397.0" layoutY="130.0" prefHeight="31.0" prefWidth="87.0" promptText="Country" styleClass="textfieldnox" />
+                                    <TextField fx:id="wghttxt" alignment="CENTER" layoutX="491.0" layoutY="130.0" prefHeight="31.0" prefWidth="73.0" promptText="Weight" styleClass="textfieldnox" />
+                                    <ImageView fx:id="imagevw" fitHeight="218.0" fitWidth="242.0" layoutX="879.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Button fx:id="addgrnbtn" layoutX="756.0" layoutY="130.0" mnemonicParsing="false" onAction="#addNewITem" prefHeight="31.0" prefWidth="75.0" text="Add" />
+                                    <AnchorPane fx:id="errDisp" layoutX="564.0" layoutY="27.0" prefHeight="26.0" prefWidth="248.0" />
+                                    <Button fx:id="btnclose" layoutX="367.0" layoutY="37.0" mnemonicParsing="false" onAction="#endGrn" prefHeight="31.0" prefWidth="112.0" text="End GRN" />
+                                    <Button fx:id="endgrnbtn" layoutX="367.0" layoutY="82.0" mnemonicParsing="false" onAction="#endDocument" prefHeight="31.0" prefWidth="133.0" text="End Document" visible="false" />
+                                    <SwingNode fx:id="swingnode" layoutX="53.0" layoutY="83.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                     </children></AnchorPane>
+              </items>
+            </SplitPane>
+         </center>
+         <bottom>
+            <AnchorPane prefHeight="40.0" prefWidth="999.0" BorderPane.alignment="CENTER" />
+         </bottom>
+         <top>
+            <AnchorPane prefHeight="113.0" prefWidth="1437.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="jizanlogo" fitHeight="115.0" fitWidth="116.0" layoutX="20.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="appbanner" fitHeight="91.0" fitWidth="587.0" layoutX="153.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button fx:id="synbtn" layoutX="626.0" layoutY="50.0" mnemonicParsing="false" onAction="#syncbtn" prefHeight="33.0" prefWidth="86.0" text="Sync" textFill="#178d00" />
+                  <ProgressBar fx:id="progressBr" layoutX="718.0" layoutY="51.0" prefHeight="33.0" prefWidth="219.0" progress="0.0" />
+                  <Label fx:id="compmsg" layoutX="720.0" layoutY="88.0" prefHeight="21.0" prefWidth="215.0" />
+               </children>
+            </AnchorPane>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

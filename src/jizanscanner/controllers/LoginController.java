@@ -22,18 +22,25 @@ import com.pepperonas.fxiconics.MaterialColor;
 import com.pepperonas.fxiconics.gmd.FxFontGoogleMaterial;
 import java.awt.Window;
 import java.io.IOException;
+import java.time.LocalDate;
+import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ContentDisplay;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.stage.WindowEvent;
 /**
- * FXML Controller class
- *
- * @author santosh
- */
+* @author SANTOSH JAISWAL
+*/
 
 
 public class LoginController implements Initializable {
@@ -41,7 +48,7 @@ public class LoginController implements Initializable {
    UserIntraVerification pp = new UserIntraVerification();
    GlobalVariable gv = new GlobalVariable();
    CustomeControls cc = new CustomeControls();
-   
+ 
     
     @FXML
     public TextField loginuser;
@@ -54,6 +61,12 @@ public class LoginController implements Initializable {
     
     @FXML
     public AnchorPane loginerrors;
+    
+    @FXML
+    public ImageView jizanbanner;
+    
+    @FXML
+    public ImageView canlogo;
  
     
     /**
@@ -63,11 +76,30 @@ public class LoginController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //TODO
+        //gv.setAppDefaultImg(this);
+        
+        FxIconicsLabel loginIcon = (FxIconicsLabel) new FxIconicsLabel.Builder(FxFontGoogleMaterial.Icons.gmd_settings_power)
+                .size(18)
+                .color(MaterialColor.BROWN_900)
+                .build();
+        loginbtn.setGraphic(loginIcon);
+        loginbtn.setContentDisplay(ContentDisplay.LEFT);
+     
+       jizanbanner.setImage(new Image("/images/jiz3dbanner.png"));
+       canlogo.setImage(new Image("/images/caniasicon.png"));
         
         System.out.println(loginuser);
         
+        
+       
+        
     }
     
+    @FXML
+    public void closeLogin() {
+        Platform.exit();
+    }
+   
     @FXML
     public void tryLogin() throws Exception {
         gv.setGlobusername(loginuser.getText());
@@ -82,9 +114,10 @@ public class LoginController implements Initializable {
             
         System.out.println("login sucessfull :)");
         
-        secondScreen();
+    
         Stage stage = (Stage)loginbtn.getScene().getWindow();
         stage.close();
+        secondScreen();
         
             } 
        else
@@ -95,20 +128,31 @@ public class LoginController implements Initializable {
    
     
     
-        public void secondScreen() throws IOException
-            {
-           Parent root = FXMLLoader.load(getClass().getResource("/jizanscanner/views/scannerGrnSetup.fxml"));
-           Scene nscene = new Scene(root);
-           Stage tStatge = new Stage();
-           tStatge.setScene(nscene);
-           tStatge.setMaximized(true);
-           tStatge.setTitle("Jizan Scanner 0.1");
-           tStatge.show();   
-           
-           
-            }
-   
-    
-    
-     }
+public void secondScreen() throws IOException
+                {
+            
+        Parent root = FXMLLoader.load(getClass().getResource("/jizanscanner/views/scannerGrnSetupFix.fxml"));
+            
+        Scene nscene = new Scene(root);
+        Stage tStatge = new Stage();
+        tStatge.setScene(nscene);
+        tStatge.setMaximized(true);
+        tStatge.setTitle("GRN Scanner 1.0");
+        tStatge.getIcons().add(new Image("/images/appicon.png"));
+        tStatge.show(); 
+             
+              }
+
+        /* this is test material name */
+
+
+
+/*
+       
+
+
+
+*/
+
+}
     
